@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stage 3 - Precent 6 Group</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Stage 3 - مسابقة في السيرة النبوية</h1>
+      <p>Created by Meziany Said</p>
+    </header>
+
+    <div class="container">
+      <div class="routers-buttons">
+        <a href="index.html" class="router-button" data-stage="1">
+          <span>Stage 1</span>
+        </a>
+        <a href="stage2.html" class="router-button" data-stage="2">
+          <span>Stage 2</span>
+        </a>
+        <a href="stage3.html" class="router-button active" data-stage="3">
+          <span>Stage 3</span>
+        </a>
+      </div>
+
+      <!-- Copy the rest of the content from index.html but with different questions -->
+      <div class="overall-stats-card">
+        <h2>Overall Statistics</h2>
+        <div class="overall-stats-grid">
+          <div class="group-stat">
+            <h3>Group 1</h3>
+            <div class="stat-circle">
+              <span class="stat-number" data-group="Group 1">0</span>
+              <span class="stat-label">Correct</span>
+            </div>
+          </div>
+          <div class="group-stat">
+            <h3>Group 2</h3>
+            <div class="stat-circle">
+              <span class="stat-number" data-group="Group 2">0</span>
+              <span class="stat-label">Correct</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="cards-grid">
+        <div class="card">
+          <div class="card-header">
+            <h2>Group 1</h2>
+            <div class="group-counter">
+              <span class="counter-label">True Answers:</span>
+              <span class="counter-value" data-group="Group 1">0</span>
+            </div>
+          </div>
+          <div class="questions-container">
+            <div class="question-item">
+              <div class="question-text">Question 1:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 2:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 3:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 4:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 5:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 6:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header">
+            <h2>Group 2</h2>
+            <div class="group-counter">
+              <span class="counter-label">True Answers:</span>
+              <span class="counter-value" data-group="Group 2">0</span>
+            </div>
+          </div>
+          <div class="questions-container">
+            <div class="question-item">
+              <div class="question-text">Question 1:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 2:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 3:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 4:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 5:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+            <div class="question-item">
+              <div class="question-text">Question 6:</div>
+              <div class="button-group">
+                <button class="tf-button" data-answer="true">True</button>
+                <button class="tf-button" data-answer="false">False</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Stage management
+      let currentStage = 1;
+      const totalStages = 3;
+
+      // Arrays to store answers for each group
+      const group1Answers = [];
+      const group2Answers = [];
+
+      // Individual variables for each group
+      let group1True = 0;
+      let group1False = 0;
+      let group2True = 0;
+      let group2False = 0;
+
+      // Stage navigation
+      document.querySelectorAll(".router-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const targetStage = parseInt(this.dataset.stage);
+          if (targetStage >= 1 && targetStage <= totalStages) {
+            currentStage = targetStage;
+            updateStageButtons();
+            // Here you can add logic to show/hide content based on the stage
+            console.log(`Switched to Stage ${currentStage}`);
+          }
+        });
+      });
+
+      function updateStageButtons() {
+        document.querySelectorAll(".router-button").forEach((button) => {
+          const stage = parseInt(button.dataset.stage);
+          if (stage === currentStage) {
+            button.classList.add("active");
+          } else {
+            button.classList.remove("active");
+          }
+        });
+      }
+
+      // Initialize stage buttons
+      updateStageButtons();
+
+      function updateGroupSummary(card) {
+        const groupId = card.querySelector("h2").textContent;
+        let trueCount = 0;
+        let falseCount = 0;
+        let answers = [];
+
+        // Get the correct counts and answers array based on group
+        switch (groupId) {
+          case "Group 1":
+            trueCount = group1True;
+            falseCount = group1False;
+            answers = group1Answers;
+            break;
+          case "Group 2":
+            trueCount = group2True;
+            falseCount = group2False;
+            answers = group2Answers;
+            break;
+        }
+
+        // Update overall statistics
+        const overallStat = document.querySelector(
+          `.stat-number[data-group="${groupId}"]`
+        );
+        if (overallStat) {
+          overallStat.textContent = trueCount;
+        }
+
+        // Update group counter
+        const groupCounter = document.querySelector(
+          `.counter-value[data-group="${groupId}"]`
+        );
+        if (groupCounter) {
+          groupCounter.textContent = trueCount;
+        }
+
+        // Log group answers for debugging
+        console.log(`${groupId} Answers:`, answers);
+
+        // Update highest score highlighting
+        updateHighestScore();
+      }
+
+      function updateHighestScore() {
+        // Get all stat numbers
+        const statNumbers = document.querySelectorAll(".stat-number");
+        let maxScore = -1;
+        let minScore = Infinity;
+        let maxScoreElement = null;
+        let minScoreElement = null;
+
+        // Find the highest and lowest scores
+        statNumbers.forEach((stat) => {
+          const score = parseInt(stat.textContent);
+          if (score > maxScore) {
+            maxScore = score;
+            maxScoreElement = stat;
+          }
+          if (score < minScore) {
+            minScore = score;
+            minScoreElement = stat;
+          }
+        });
+
+        // Remove highlight from all stat circles
+        document.querySelectorAll(".stat-circle").forEach((circle) => {
+          circle.classList.remove("highest-score", "lowest-score");
+        });
+
+        // Add highlight to the highest score
+        if (maxScoreElement && maxScore >= 0) {
+          maxScoreElement
+            .closest(".stat-circle")
+            .classList.add("highest-score");
+        }
+
+        // Add highlight to the lowest score
+        if (minScoreElement && minScore < Infinity) {
+          minScoreElement.closest(".stat-circle").classList.add("lowest-score");
+        }
+      }
+
+      document.querySelectorAll(".tf-button").forEach((button) => {
+        button.addEventListener("click", function () {
+          const isTrue = this.dataset.answer === "true";
+          const questionItem = this.closest(".question-item");
+          const card = this.closest(".card");
+          const groupId = card.querySelector("h2").textContent;
+          const questionText =
+            questionItem.querySelector(".question-text").textContent;
+
+          // Get the correct answers array based on group
+          let answers;
+          switch (groupId) {
+            case "Group 1":
+              answers = group1Answers;
+              break;
+            case "Group 2":
+              answers = group2Answers;
+              break;
+          }
+
+          // Find if this question was already answered
+          const existingAnswerIndex = answers.findIndex(
+            (ans) => ans.question === questionText
+          );
+
+          // Update the previous answer count if it exists
+          if (existingAnswerIndex !== -1) {
+            const previousAnswer = answers[existingAnswerIndex].answer;
+            switch (groupId) {
+              case "Group 1":
+                if (previousAnswer === "true") group1True--;
+                else group1False--;
+                break;
+              case "Group 2":
+                if (previousAnswer === "true") group2True--;
+                else group2False--;
+                break;
+            }
+            // Update the answer in the array
+            answers[existingAnswerIndex] = {
+              question: questionText,
+              answer: isTrue ? "true" : "false",
+            };
+          } else {
+            // Add new answer to the array
+            answers.push({
+              question: questionText,
+              answer: isTrue ? "true" : "false",
+            });
+          }
+
+          // Update the new answer count
+          switch (groupId) {
+            case "Group 1":
+              if (isTrue) group1True++;
+              else group1False++;
+              break;
+            case "Group 2":
+              if (isTrue) group2True++;
+              else group2False++;
+              break;
+          }
+
+          // Update group summary
+          updateGroupSummary(card);
+
+          // Reset all buttons in this question
+          questionItem.querySelectorAll(".tf-button").forEach((btn) => {
+            btn.classList.remove("true", "false");
+            btn.disabled = true;
+          });
+
+          // Add appropriate class to clicked button
+          this.classList.add(isTrue ? "true" : "false");
+        });
+      });
+
+      // Initialize counters on page load
+      document.querySelectorAll(".card").forEach((card) => {
+        updateGroupSummary(card);
+      });
+    </script>
+  </body>
+</html>
